@@ -1,0 +1,41 @@
+.card {
+  width: 500px;
+  height: 600px;
+  border: 4px solid grey;
+  background-color: white;
+}
+
+.centred {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.btn-primary,
+.form-control,
+label {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 150%;
+}
+
+label {
+  margin-top: 50px;
+  font-size: 200%;
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 300%;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.btn-primary {
+  margin-top: 30px;
+  text-align: center;
+}
