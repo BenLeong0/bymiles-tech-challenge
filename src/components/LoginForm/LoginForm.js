@@ -4,7 +4,7 @@ import "./LoginForm.css";
 
 function LoginForm(props) {
   const [state, setState] = useState({
-    username: "nopressure1",
+    username: "",
     password: ""
   });
 
