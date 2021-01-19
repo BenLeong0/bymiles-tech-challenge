@@ -1,0 +1,37 @@
+.cover-type pre,
+.car-type pre,
+.address pre {
+  text-transform: capitalize;
+}
+
+/* Word wrap */
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.info-field {
+  margin: 25px 50px;
+}
+
+.info-field span {
+  font-weight: bold;
+}
+
+.btn-return {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  margin: auto;
+}
+
+.astext {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
