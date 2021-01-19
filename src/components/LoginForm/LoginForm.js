@@ -7,11 +7,11 @@ function LoginForm(props) {
     username: "",
     password: ""
   });
-
   const [resp, updateResp] = useState({});
-
+  const [submitted, toggleSubmitted] = useState(false);
   const [errorFound, setErrorFound] = useState("");
 
+  // Update saved username/password, which updates the text in the field
   const handleChange = e => {
     const { id, value } = e.target;
     setState(prevState => ({ ...prevState, [id]: value }));
@@ -19,6 +19,9 @@ function LoginForm(props) {
 
   const handleSubmitClick = async event => {
     event.preventDefault();
+
+    // Call API with inputted username and password
+    toggleSubmitted(true);
     try {
       let URL = "https://api.bybits.co.uk/auth/token";
       let config = {
@@ -27,10 +30,9 @@ function LoginForm(props) {
           "Content-type": "application/json"
         }
       };
-
       let data = {
-        username: "testuser",
-        password: "EbpucVzUP5cvsYha0E9i",
+        username: state.username,
+        password: state.password,
         type: "USER_PASSWORD_AUTH"
       };
 
@@ -41,8 +43,31 @@ function LoginForm(props) {
     }
   };
 
+  // Waits for response from first API call
   useEffect(() => {
-    console.log(resp);
+    if (!submitted) {
+      return;
+    }
+    const errorMessages = {
+      400: "Username / password not found",
+      401: "Unauthorised request",
+      403: "Forbidden request",
+      404: "Username / password not found",
+      500: "Internal server error",
+      503: "Service unavailable"
+    };
+
+    // If error status with first API call
+    if (resp.status !== 200) {
+      if (errorMessages.hasOwnProperty(resp.status)) {
+        setErrorFound(errorMessages[resp.status]);
+      } else {
+        setErrorFound("An error occurred");
+      }
+      return;
+    }
+
+    // Make second API call, using auth token from first call
     const handleResponse = async event => {
       try {
         let URL = "https://api.bybits.co.uk/policys/details";
@@ -59,15 +84,8 @@ function LoginForm(props) {
         console.error(error);
       }
     };
-    const errorMessages = {
-      400: "Username / password not found",
-      401: "Unauthorised request",
-      403: "Forbidden request",
-      404: "Username / password not found",
-      500: "Internal server error",
-      503: "Service unavailable"
-    };
 
+    // If error with second API call
     if (resp.status === 200) {
       setErrorFound("");
       handleResponse();
@@ -78,7 +96,7 @@ function LoginForm(props) {
     } else {
       return;
     }
-  }, [resp, props]);
+  }, [resp, props, submitted]);
 
   return (
     <div className="card centred">
