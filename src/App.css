@@ -1,5 +1,19 @@
 body {
-  background-color: skyblue;
+  background-color: #27d6ff;
+  color: #320b42;
+}
+
+.card {
+  width: 450px;
+  height: 600px;
+  border: 4px solid grey;
+  background-color: white;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+input {
+  max-width: 90%;
 }
 
 .App {
@@ -39,4 +53,12 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.card-title {
+  font-size: 300%;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
 }
