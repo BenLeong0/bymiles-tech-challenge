@@ -21,11 +21,15 @@ pre {
   font-weight: bold;
 }
 
+.info-field {
+  text-align: left;
+}
+
 .btn-return {
   position: absolute;
   bottom: 30px;
   left: 30px;
-  margin: auto;
+  font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
 }
 
 .astext {

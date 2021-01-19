@@ -52,9 +52,7 @@ function LoginForm(props) {
             "Content-type": "application/json"
           }
         };
-        console.log("yo");
         const newResp = await axios.get(URL, config);
-        console.log(newResp);
         props.changeToData(newResp);
       } catch (error) {
         console.error(error);
@@ -71,7 +69,6 @@ function LoginForm(props) {
 
     if (resp.status === 200) {
       toggleErrorFound("");
-      console.log(resp);
       handleResponse();
     } else if (errorMessages.hasOwnProperty(resp.status)) {
       toggleErrorFound(errorMessages[resp.status]);
@@ -87,7 +84,7 @@ function LoginForm(props) {
       <div className="card-title">Sign in</div>
       <form>
         <div>
-          <label>Username</label>
+          <label for="username">Username</label>
           <input
             type="text"
             className="form-control"
@@ -98,7 +95,7 @@ function LoginForm(props) {
           />
         </div>
         <div>
-          <label>Password</label>
+          <label for="password">Password</label>
           <input
             type="password"
             className="form-control"
