@@ -1,10 +1,10 @@
-# ByMiles Technical Challenge
+# By Miles Technical Challenge
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Introduction
 
-Welcome to my submission for the ByMiles **By Bits Code Challenge**! I have constructed a login page in React, where policy holders can input their username and password and they will be taken a page showing various details about their insurance policy.
+Welcome to my submission for the By Miles **By Bits Code Challenge**! I have constructed a login page in React, where policy holders can input their username and password and they will be taken a page showing various details about their insurance policy.
 
 This was my first time using React (or anything similar), so while I appreciate the code may not be perfect or adhere to all standard conventions, I hope it displays my ability to quickly develop new skills and come to understand new systems. I do have previous HTML, CSS and JavaScript experience, so I was able to apply these skills to quickly pick up React without significant difficulties.
 
