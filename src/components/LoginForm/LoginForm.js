@@ -10,7 +10,7 @@ function LoginForm(props) {
 
   const [resp, updateResp] = useState({});
 
-  const [errorFound, toggleErrorFound] = useState("");
+  const [errorFound, setErrorFound] = useState("");
 
   const handleChange = e => {
     const { id, value } = e.target;
@@ -37,11 +37,12 @@ function LoginForm(props) {
       updateResp(await axios.post(URL, data, config));
     } catch (error) {
       console.error(error);
-      toggleErrorFound("An error occurred");
+      setErrorFound("An error occurred");
     }
   };
 
   useEffect(() => {
+    console.log(resp);
     const handleResponse = async event => {
       try {
         let URL = "https://api.bybits.co.uk/policys/details";
@@ -68,12 +69,12 @@ function LoginForm(props) {
     };
 
     if (resp.status === 200) {
-      toggleErrorFound("");
+      setErrorFound("");
       handleResponse();
     } else if (errorMessages.hasOwnProperty(resp.status)) {
-      toggleErrorFound(errorMessages[resp.status]);
+      setErrorFound(errorMessages[resp.status]);
     } else if (resp.hasOwnProperty("status")) {
-      toggleErrorFound("An error occurred");
+      setErrorFound("An error occurred");
     } else {
       return;
     }
@@ -84,7 +85,7 @@ function LoginForm(props) {
       <div className="card-title">Sign in</div>
       <form>
         <div>
-          <label for="username">Username</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             className="form-control"
@@ -95,7 +96,7 @@ function LoginForm(props) {
           />
         </div>
         <div>
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             className="form-control"
