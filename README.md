@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Welcome to my submission for the ByMiles **By Bits Code Challenge**. I have constructed a login page in React, where policy holders can input their username and password and they will be taken a page showing various details about their insurance policy.
 
-This was my first time using React (or anything similar), so while I appreciate the code may not be perfect or adhere to all standard conventions, I hope it displays my ability to quickly develop new skills and come to understand new systems.
+This was my first time using React (or anything similar), so while I appreciate the code may not be perfect or adhere to all standard conventions, I hope it displays my ability to quickly develop new skills and come to understand new systems. I do have previous HTML, CSS and JavaScript experience, so I was able to apply these skills to quickly pick up React without significant difficulties.
 
 I spent a day or two following a video series on React (from PluralSight), and then spent a few hours developing the app using the knowledge I developed over that time. I would say the core app took me around three hours, with an hour or two spent cleaning up code and CSS.
 
@@ -18,4 +18,4 @@ The page consists of two 'cards': The login form and the policy information. Upo
 
 ## Conclusion
 
-This was an interesting project, through which I was able to learn a lot about React and implement basics to create a (I believe) functional app. Even if my application is unfortunately unsuccessful I would appreciate any and all feedback, and I am sure I will continue to use React into the future.
+This was an interesting project, through which I was able to learn a lot about React and implement basics to create (I believe) a functional app. Even if my application is unfortunately unsuccessful I would appreciate any and all feedback, and I am sure I will continue to use React into the future.
